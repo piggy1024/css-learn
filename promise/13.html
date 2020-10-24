@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+</body>
+<script src="./ajax.js"></script>
+<script>
+    ajax(`http://localhost:5500/promise/user.json`).then(
+        value=>{
+        console.log(value);
+        },
+        reason=>{
+            console.log(reason);
+        }
+    )
+    // function request(){
+    //     return new Promise((resolve, reject)=>{
+    //         setTimeout(()=>{
+    //             resolve('成功!')
+    //         }, 2000);
+    //     })
+    // }    
+    // request().then(value =>{
+    //     console.log(value);
+    // })
+   
+</script>
+</html>

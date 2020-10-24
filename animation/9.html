@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css">
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            width: 100vw;
+            height: 100vh;
+            background: #34495e;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        ul{
+            list-style: none;
+            width: 400px;
+            height: 200px;
+            display: flex;
+        }
+        li{
+            flex: 1;
+            color: red;
+            border: solid 1px #ddd;
+            display: flex;
+            justify-content: center;
+        }
+        i.fa{
+            font-size: 3rem;
+            animation-name: hd;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+            position: absolute;
+        }
+        /* animation-direction 的使用 */
+        li:nth-child(1)>i{
+            animation-direction: normal;
+        }
+        li:nth-child(2)>i{
+            animation-direction: reverse;
+        }
+        @keyframes hd{
+            to{
+                transform: scale(3);
+            }
+        }
+
+       
+       
+    </style>
+</head>
+<body>
+    <ul>
+        <li>
+            <i class="fa fa-heart" aria-hidden="true"></i>
+        </li>
+         <li>
+            <i class="fa fa-heart" aria-hidden="true"></i>
+        </li>
+    </ul>
+</body>
+</html>

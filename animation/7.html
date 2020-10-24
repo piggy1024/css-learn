@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+     
+        main{
+             width: 100vw;
+            height: 100vh;
+            background: #34495e;
+           
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        div{
+            width: 100px;
+            height: 100px;
+            background: #f1c40f;
+            animation-name: scale;
+            animation-duration: 2s;
+            border: solid 5px white
+        }
+  
+        /* 有中间的属性才会产生动画, 像点线和实线就没有动画 */
+      
+        @keyframes scale{
+        
+           to{
+                width: 300px;
+                height: 300px;
+                border: solid 5px white
+           }
+        }
+       
+    </style>
+</head>
+<body>
+    <main>
+        <div></div>
+    </main>
+</body>
+</html>

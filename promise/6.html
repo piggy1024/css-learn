@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+</body>
+<script>
+    setTimeout(()=>{
+        console.log('Timeout');
+    },1000)
+
+    new Promise((resolve)=>{
+        resolve()
+        console.log('promise');
+    }).then(success=>{
+        console.log('then');
+    })
+    console.log('piggy');
+</script>
+</html>

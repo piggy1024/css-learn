@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise</title>
+</head>
+<body>
+    
+</body>
+<script src="./ajax.js"></script>
+<script>
+    function query(url, delay= 200){
+        let promises = [
+            ajax(url),
+            new Promise((resolve, reject)=>{
+                setTimeout(()=>{
+                    reject('请求超时!')
+                })
+            })
+        ];
+        return Promise.race(promises)
+    }
+
+    query(`http://localhost:5500/promise/user.json`, 1000)
+        .then(value=>{
+            console.log(value);
+        })
+        .catch(error => {
+            console.log(error);
+        })
+</script>
+</html>

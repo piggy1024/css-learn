@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>piggyCoder</title>
+    <style>
+        article{
+            margin: 0 auto;
+            width: 300px;
+            height: 300px;
+            border: solid 5px silver;
+            display: grid; /* 行内元素 可设置为inline-grid成为行内元素*/
+            /* grid-template-rows: repeat(3, [r-start] 1fr [r-end]); */
+            /* grid-template-columns: repeat(3, [c-start] 1fr [c-end]); */
+        }
+        body{
+            padding-top: 50px;
+        }
+        .container{
+            width: 1020px;
+            margin: 0 auto;
+        }
+        [class^="col-"]{
+            background: blueviolet;
+            background-clip: content-box;
+            border: 1px solid blueviolet;
+            padding: 10px;
+            box-sizing: border-box;
+            color: white;
+            font-size: 25px;
+        }
+        .row{
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 10px;
+        }
+        /* .columns{
+            grid-template-columns: repeat(12,1fr);
+        } */
+        .col-1{
+            /* grid-column-end: span 1; */
+            grid-column: span 1; /* 简版 */
+        }
+        .col-2{
+            grid-column-end: span 2;
+        }
+        .col-3{
+            grid-column-end: span 3;
+        }
+        .col-4{
+            grid-column-end: span 4;
+        }
+        .col-5{
+            grid-column-end: span 5;
+        }
+        .col-6{
+            grid-column-end: span 6;
+        }
+      
+    </style>
+</head>
+<body>
+    PIGGY
+    <article class="container">
+        <div class="row">
+            <div class="col-4">1</div>
+            <div class="col-2">2</div>
+            <div class="col-6">3</div>
+        </div>
+    </article>
+</body>
+</html>

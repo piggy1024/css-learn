@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise</title>
+</head>
+<body>
+    
+</body>
+<script src="./ajax.js"></script>
+<script>
+    const p1 = new Promise((resolve, reject)=>{
+        resolve('resolved')
+    })
+    const p2 = new Promise((resolve, reject)=>{
+        resolve('resolved')
+    })
+    Promise.allSettled([p1,p2]).then(results=>{
+        console.log(results);
+    })
+</script>
+</html>

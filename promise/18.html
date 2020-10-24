@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise</title>
+</head>
+<body>
+    
+</body>
+<script src="./ajax.js"></script>
+<script>
+
+    Promise.hd =function(value){
+        return new Promise(resolve=>{
+            resolve(value)
+        });
+    };
+    Promise.hd("piggy").then(resolve=>{
+        console.log(resolve);
+    })
+
+    function query(name){
+        const cache = query.cache || (query.cache = new Map())
+        if(cache.has(name)){
+            console.log('走缓存了');
+            return Promise.resolve(cache.get(name))
+        }
+        return ajax(`http://localhost:5500/promise/user.json`).then(user=>{
+            cache.set(name, user);
+            console.log('没走缓存');
+            return user;
+        })
+    }
+    query('piggy').then(user=>console.log(user))
+    setTimeout(()=>{
+       query('piggy').then(user=>console.log(user))
+    },1000)
+</script>
+</html>

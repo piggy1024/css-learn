@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise</title>
+    <style>
+        div{
+            position: relative;
+            background: greenyellow;
+            width: 200px;height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+<script>
+    function interval(delay=1000, callback){
+        return new Promise((resolve, reject)=>{
+            let id = setInterval(()=>{
+                callback(id, resolve)
+            }, delay)
+        })
+    }
+    interval(100,(id, resolve)=>{
+        const div = document.querySelector('div');
+        let left = parseInt(window.getComputedStyle(div).left)
+        div.style.left = left + 10 +'px';
+        if(left >= 200){
+            clearInterval(id)
+            resolve(div)
+        }
+    }).then(div=>{
+        interval(100,(timeId, resolve)=>{
+            let width = parseInt(window.getComputedStyle(div).width)
+            div.style.width = width -10 +'px'
+            if(width<=20){
+                clearInterval(timeId)
+            }
+        })
+    })
+</script>
+</html>

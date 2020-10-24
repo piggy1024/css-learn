@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+     
+        main{
+             width: 100vw;
+            height: 100vh;
+            background: #34495e;
+            animation-name: scale,background;
+            transform: scale(0);
+            animation-duration: 2s;
+            animation-fill-mode: forwards;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        main:after{
+            content: 'piggy.com';
+            font-size: 2em;
+            color: white;
+            opacity: 0;
+            animation-name: opacity;
+            animation-duration: 2s;
+            animation-delay: 2s;
+            animation-fill-mode: forwards;
+        }
+       
+        @keyframes opacity{
+            to{
+                opacity: .8;
+            }
+        }
+        @keyframes scale{
+           25%{
+            transform: scale(0.5);
+           }
+           50%{
+            transform: scale(1) rotate(300deg);
+
+           }
+           75%{
+            transform: scale(0.5);
+           }
+           to{
+            transform: scale(1);
+
+           }
+        }
+        @keyframes background{
+           25%{
+               background: #2ecc71;
+           }
+           50%{
+               background: #e67e22;
+
+           }
+           75%{
+               background: #9b59b6;
+           }
+           100%{
+           background: red;
+
+           }
+           
+        }
+         @keyframes radius{
+             from,to{
+                 background: gray;
+             }
+           25%{
+               border-radius: 50%;
+           }
+           50%{
+               border-radius: 0;
+
+           }
+           75%{
+               border-radius: 50%;
+           }
+           
+        }
+    </style>
+</head>
+<body>
+    <main>
+    </main>
+</body>
+</html>

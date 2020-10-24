@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            width: 100vw;
+            height: 100vh;
+            background: #34495e;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .heart{
+            width: 200px;
+            height: 200px;
+            background: #e74c3c;
+            animation-name: heart;
+            animation-duration: 2s;
+            transform: rotate(45deg);
+            animation-iteration-count: infinite;
+        }
+        /* 使用伪类完成 */
+        .heart::before{
+            content: "";
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            position: absolute;
+            background: #e74c3c;
+            transform: translateX(-50%);
+        }
+        .heart::after{
+            content: "";
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            position: absolute;
+            background: #e74c3c;
+            transform: translateY(-50%);
+        }
+
+        @keyframes heart{
+            25%{
+                transform: scale(1) rotate(45deg);;
+            }
+            50%{
+                transform: scale(.5) rotate(45deg);;
+            }
+            75%{
+                transform: scale(1) rotate(45deg);;
+            }
+            /* 85%{
+                transform: scale(.5) rotate(45deg);;
+            } */
+            to{
+                transform: scale(1) rotate(45deg);;
+                /* transform:  */
+            }
+        }
+
+       
+    </style>
+</head>
+<body>
+    <div class="heart">
+        
+    </div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise</title>
+</head>
+<body>
+    
+</body>
+<script src="./ajax.js"></script>
+<script>
+    let promise = Promise.resolve('fighting!')
+    promise = promise.then(v =>{
+        return new Promise(resolve=>{
+            setTimeout(()=>{
+                console.log(1);
+                resolve();
+            },1000)
+        })
+    });
+    promise.then(v => {
+        return new Promise(resolve=>{
+            setTimeout(()=>{
+                console.log(2);
+                resolve();
+            },)
+        })
+    })
+</script>
+</html>

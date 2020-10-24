@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            width: 100vw;
+            height: 100vh;
+            background: #34495e;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        main{
+            width: 100px;
+            height: 100px;
+            background:white;
+            animation-name: hd;
+            animation-duration: 2s;
+        }
+        /* 帧动画 */
+        /* 1 先用@keyframes + name 定义一个动画名 */
+        /* 2 在需要使用动画的样式种添加 animation-name: 动画名 */
+        /* 3 然后可以继续在样式种添加animation的其它属性 */
+        @keyframes hd{
+            0%{
+                background: white;
+            }
+            /* 25%{
+                transform: scale(2);
+            }
+            65%{
+                transform: scale(1);
+                background: #9b59b6;
+            } */
+            100%{
+                background: #e74c3c;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main></main>
+</body>
+</html>
