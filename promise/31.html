@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+    
+  </head>
+  <body>
+  </body>
+  <script src="./ajax.js"></script>
+  <script>
+    async function hd(){
+      // console.log(a);
+      return ajax(`http://localhost:5500/promise/user.json`);
+    }
+    hd('piggy').then(user=>{console.log(user);}).catch(error=>{
+      console.log(error);
+    })
+
+    new Promise((resolve, reject)=>{
+        throw new Error('fail');
+        // console.log(a);
+      }).catch(error => {
+        console.log(error);
+      })
+  </script>
+</html>

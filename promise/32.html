@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+    
+  </head>
+  <body>
+  </body>
+  <script src="./ajax.js"></script>
+  <script>
+    function p1() {
+      return new Promise(resolve => {
+        setTimeout(() => {
+            resolve('piggy p1!')
+        }, 2000);
+      })
+    }
+    function p2() {
+      return new Promise(resolve => {
+        setTimeout(() => {
+            resolve('piggy p2!')
+        }, 2000);
+      })
+    }
+    async function hd() {
+      let res = await Promise.all([p1(), p2()])
+      console.log(res);
+    }
+    hd();
+  </script>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+    
+  </head>
+  <body>
+  </body>
+  <script src="./ajax.js"></script>
+  <script>
+      // class User {
+      //   constructor(name){
+      //     this.name = name
+      //   }
+      //   then(resolve, reject) {
+      //     let user = ajax(`http://localhost:5500/promise/user.json`)
+      //     resolve(user)
+      //   }
+      // }
+      // async function get() {
+      //   let user = await new User('piggy');
+      //   console.log(user);
+      // }
+      // get();
+      
+      class User{
+        async get(name){
+          let user = await ajax(`http://localhost:5500/promise/user.json`)
+          user.name += '-piggy.com'
+          console.log(user);
+          return user
+        }
+      }
+      new User().get('piggy').then(user=>{
+        console.log(user.id);
+      })
+  </script>
+</html>

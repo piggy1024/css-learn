@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+    
+  </head>
+  <body>
+  </body>
+  <script src="./ajax.js"></script>
+  <script>
+    // 方法一
+    let hd = {
+        async get(name){
+        return await ajax(`http://localhost:5500/promise/user.json`);
+      }
+    }
+    hd.get('piggy').then(user =>{
+      console.log(user);
+    })
+    
+    // 方法二
+    class User {
+      async get(name) {
+        return await ajax(`http://localhost:5500/promise/user.json`);
+      }
+    }
+    new User().get('piggy').then(user=>{
+      console.log(user);
+    })
+  </script>
+</html>

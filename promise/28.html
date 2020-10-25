@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+    <style>
+        #loading{
+            height: 50px;
+            width: 0;
+            background: #8e44ad;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            color: #fff;
+        }
+    </style>
+  </head>
+  <body>
+      <div id="loading">0%</div>
+      <div>111</div>
+  </body>
+  <script src="./ajax.js"></script>
+  <script>
+      function query(name){
+          setTimeout(()=>{
+             return ajax(`http://localhost:5500/promise/user.json`)
+          },1000)
+      }
+      async function loadUser(users) {
+          for(let i = 0; i < users.length-1; i++){
+            let user = await query(users[i]);
+            let progress = ((i+1) / users.length)*100;
+            loading.style.width = progress +"%";
+            loading.innerHTML = Math.round(progress) + "%";
+              
+          }
+      }
+      loadUser(['1','2','3'])
+  </script>
+</html>
